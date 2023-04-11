@@ -9,7 +9,7 @@ using Mapel.Models;
 
 namespace UTS_DRWA.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class MapelController : ControllerBase
     {
@@ -51,34 +51,6 @@ namespace UTS_DRWA.Controllers
 
         // PUT: api/Mapel/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutMapelItem(long id, MapelItem mapelItem)
-        {
-            if (id != mapelItem.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(mapelItem).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MapelItemExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
 
         // POST: api/Mapel
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -96,24 +68,6 @@ namespace UTS_DRWA.Controllers
         }
 
         // DELETE: api/Mapel/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMapelItem(long id)
-        {
-            if (_context.MapelItem == null)
-            {
-                return NotFound();
-            }
-            var mapelItem = await _context.MapelItem.FindAsync(id);
-            if (mapelItem == null)
-            {
-                return NotFound();
-            }
-
-            _context.MapelItem.Remove(mapelItem);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
 
         private bool MapelItemExists(long id)
         {

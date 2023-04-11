@@ -9,7 +9,7 @@ using Guru.Models;
 
 namespace UTS_DRWA.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class GuruController : ControllerBase
     {
@@ -32,14 +32,15 @@ namespace UTS_DRWA.Controllers
         }
 
         // GET: api/Guru/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<GuruItem>> GetGuruItem(long id)
+        [HttpGet("{nip}")]
+        public async Task<ActionResult<GuruItem>> GetGuruItem(string nip)
         {
             if (_context.GuruItem == null)
             {
                 return NotFound();
             }
-            var guruItem = await _context.GuruItem.FindAsync(id);
+            //var guruItem = await _context.GuruItem.FindAsync(nip);
+            var guruItem =  _context.GuruItem.Where(j => j.Nip == nip).FirstOrDefault();
 
             if (guruItem == null)
             {
@@ -51,34 +52,6 @@ namespace UTS_DRWA.Controllers
 
         // PUT: api/Guru/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutGuruItem(long id, GuruItem guruItem)
-        {
-            if (id != guruItem.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(guruItem).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!GuruItemExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
 
         // POST: api/Guru
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -97,24 +70,6 @@ namespace UTS_DRWA.Controllers
         }
 
         // DELETE: api/Guru/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteGuruItem(long id)
-        {
-            if (_context.GuruItem == null)
-            {
-                return NotFound();
-            }
-            var guruItem = await _context.GuruItem.FindAsync(id);
-            if (guruItem == null)
-            {
-                return NotFound();
-            }
-
-            _context.GuruItem.Remove(guruItem);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
 
         private bool GuruItemExists(long id)
         {

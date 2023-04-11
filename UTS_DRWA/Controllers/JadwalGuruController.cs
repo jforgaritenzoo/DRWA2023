@@ -9,7 +9,7 @@ using JadwalGuru.Models;
 
 namespace UTS_DRWA.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class JadwalGuruController : ControllerBase
     {
@@ -32,22 +32,6 @@ namespace UTS_DRWA.Controllers
         }
 
         // GET: api/JadwalGuru/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<JadwalGuruItem>> GetJadwalGuruItem(long id)
-        {
-            if (_context.JadwalGuruItem == null)
-            {
-                return NotFound();
-            }
-            var jadwalGuruItem = await _context.JadwalGuruItem.FindAsync(id);
-
-            if (jadwalGuruItem == null)
-            {
-                return NotFound();
-            }
-
-            return jadwalGuruItem;
-        }
 
         [HttpGet("{nip}")]
         public async Task<ActionResult<JadwalGuruItem>> GetJadwalGuruItembyNip(string nip)
@@ -88,35 +72,6 @@ namespace UTS_DRWA.Controllers
 
         // PUT: api/JadwalGuru/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutJadwalGuruItem(long id, JadwalGuruItem jadwalGuruItem)
-        {
-            if (id != jadwalGuruItem.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(jadwalGuruItem).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!JadwalGuruItemExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
         // POST: api/JadwalGuru
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
@@ -138,25 +93,7 @@ namespace UTS_DRWA.Controllers
             );
         }
 
-        // DELETE: api/JadwalGuru/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteJadwalGuruItem(long id)
-        {
-            if (_context.JadwalGuruItem == null)
-            {
-                return NotFound();
-            }
-            var jadwalGuruItem = await _context.JadwalGuruItem.FindAsync(id);
-            if (jadwalGuruItem == null)
-            {
-                return NotFound();
-            }
-
-            _context.JadwalGuruItem.Remove(jadwalGuruItem);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
+        // DELETE: api/JadwalGur
 
         private bool JadwalGuruItemExists(long id)
         {
