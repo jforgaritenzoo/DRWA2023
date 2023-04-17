@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mZCivyT0buooHtCBAIzB09pDmyOSZ+hn5kNOwmu1TfItZEdgnaJd5VXxLFOQoivrASSCSICPomqrcxgkwFaoCg==",
+  "dgSpecHash": "gIF5ThZxGtsAQY71rsMhgiV3bxaVZonKZ8V65mij0eVW/SkZXEbvJKZknzOThL+N2oDQylXHT894iQ/5+4pTLA==",
   "success": true,
   "projectFilePath": "D:\\Materi Kuliah\\Semester 6\\DESAIN RESTFUL WEB API\\Project\\DRWA2023\\BookStoreApi\\BookStoreApi.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\mongodb.driver\\2.19.0\\mongodb.driver.2.19.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\mongodb.driver.core\\2.19.0\\mongodb.driver.core.2.19.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\mongodb.libmongocrypt\\1.7.0\\mongodb.libmongocrypt.1.7.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",

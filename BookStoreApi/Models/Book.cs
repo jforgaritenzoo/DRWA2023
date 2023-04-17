@@ -1,6 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookStoreApi.Models;
 
@@ -12,11 +13,13 @@ public class Book
 
     [BsonElement("Name")]
     [JsonPropertyName("Name")]
+    [Required]
     public string BookName { get; set; } = null!;
 
     public decimal Price { get; set; }
 
     public string Category { get; set; } = null!;
 
+    [Required]
     public string Author { get; set; } = null!;
 }

@@ -1,6 +1,9 @@
+using System.Net;
+using BookStoreApi.Filters;
 using BookStoreApi.Models;
 using BookStoreApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace BookStoreApi.Controllers;
 
@@ -31,6 +34,12 @@ public class BooksController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post(Book newBook)
     {
+        // if (!ModelState.IsValid)
+        // {
+        //     var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+        //     var response = new HttpResponse(400, new { Errors = errors }, "application/json");
+        //     return (IActionResult)await Task.FromResult(response);
+        // }
         await _booksService.CreateAsync(newBook);
 
         return CreatedAtAction(nameof(Get), new { id = newBook.Id }, newBook);
@@ -66,5 +75,31 @@ public class BooksController : ControllerBase
         await _booksService.RemoveAsync(id);
 
         return NoContent();
+    }
+}
+
+public class HttpResponse
+{
+    public int StatusCode { get; set; }
+    public object Body { get; set; }
+    public string ContentType { get; set; }
+
+    public HttpResponse(int statusCode, object body, string contentType)
+    {
+        StatusCode = statusCode;
+        Body = body;
+        ContentType = contentType;
+    }
+
+    public async Task WriteAsync(HttpContext context)
+    {
+        context.Response.StatusCode = StatusCode;
+        context.Response.ContentType = ContentType;
+
+        if (Body != null)
+        {
+            var json = JsonConvert.SerializeObject(Body);
+            await context.Response.WriteAsync(json);
+        }
     }
 }
