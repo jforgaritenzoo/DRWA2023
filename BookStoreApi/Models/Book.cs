@@ -16,7 +16,8 @@ public class Book
     [Required]
     public string BookName { get; set; } = null!;
 
-    public decimal Price { get; set; }
+    [Required]
+    public decimal? Price { get; set; } = null!;
 
     public string Category { get; set; } = null!;
 
