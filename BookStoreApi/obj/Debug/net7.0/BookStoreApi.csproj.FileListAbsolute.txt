@@ -93,3 +93,10 @@ D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi
 D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi\bin\Debug\net7.0\Newtonsoft.Json.dll
 D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi\bin\Debug\net7.0\BookStoreApi.xml
 D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi\obj\Debug\net7.0\BookStoreApi.xml
+D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\Materi Kuliah\Semester 6\DESAIN RESTFUL WEB API\Project\DRWA2023\BookStoreApi\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

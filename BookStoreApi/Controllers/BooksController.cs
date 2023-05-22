@@ -2,6 +2,7 @@ using System.Net;
 using BookStoreApi.Filters;
 using BookStoreApi.Models;
 using BookStoreApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -26,6 +27,7 @@ public class BooksController : ControllerBase
     /// <response code="404">If the item could not be found</response>
     /// <response code="500">If the request on the server failed unexpectedly</response>
     [HttpGet]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -53,6 +55,7 @@ public class BooksController : ControllerBase
     /// <response code="404">If the item could not be found</response>
     /// <response code="500">If the request on the server failed unexpectedly</response>
     [HttpGet("{id:length(24)}")]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -93,6 +96,7 @@ public class BooksController : ControllerBase
     /// <response code="404">If the item could not be found</response>
     /// <response code="500">If the request on the server failed unexpectedly</response>
     [HttpPost]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -100,12 +104,6 @@ public class BooksController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> Post(Book newBook)
     {
-        // if (!ModelState.IsValid)
-        // {
-        //     var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
-        //     var response = new HttpResponse(400, new { Errors = errors }, "application/json");
-        //     return (IActionResult)await Task.FromResult(response);
-        // }
         await _booksService.CreateAsync(newBook);
 
         return CreatedAtAction(nameof(Get), new { id = newBook.Id }, newBook);
@@ -135,6 +133,7 @@ public class BooksController : ControllerBase
     /// <response code="404">If the item could not be found</response>
     /// <response code="500">If the request on the server failed unexpectedly</response>
     [HttpPut("{id:length(24)}")]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -177,6 +176,7 @@ public class BooksController : ControllerBase
     /// <response code="404">If the item could not be found</response>
     /// <response code="500">If the request on the server failed unexpectedly</response>
     [HttpDelete("{id:length(24)}")]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
