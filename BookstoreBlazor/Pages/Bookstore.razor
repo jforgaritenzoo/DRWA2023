@@ -1,0 +1,49 @@
+﻿@page "/bookstore"
+@inject HttpClient Http
+
+
+<PageTitle>Bookstore</PageTitle>
+<h1>Bookstore Data</h1>
+
+<p>This component demonstrates fetching data from the api server.</p>
+@if (books == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in books)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Name</td>
+                    <td>@book.Price</td>
+                    <td>@book.Category</td>
+                    <td>@book.Author</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private BookstoreItem[]? books;
+
+    protected override async Task OnInitializedAsync()
+    {
+        books = await Http.GetFromJsonAsync<BookstoreItem[]>("http://localhost:5272/api/Books/");
+    }
+
+}
+
