@@ -11,16 +11,16 @@ namespace BookStoreApi.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
-public class BooksController : ControllerBase
+public class PresensiMengajarController : ControllerBase
 {
-    private readonly BooksService _booksService;
+    private readonly PresensiMengajarService _presensiMengajarService;
 
-    public BooksController(BooksService booksService) => _booksService = booksService;
+    public PresensiMengajarController (PresensiMengajarService presensiMengajarService) => _presensiMengajarService = presensiMengajarService;
 
     /// <summary>
-    /// Get all BookStore Item.
+    /// Get all PresensiMengajar Item.
     /// </summary>
-    /// <returns>All BookStore Item</returns>
+    /// <returns>All PresensiMengajar Item</returns>
     /// <response code="200">Returns all the item</response>
     /// <response code="400">If there is no item</response>
     /// <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
@@ -33,17 +33,17 @@ public class BooksController : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<List<Book>> Get() => await _booksService.GetAsync();
+    public async Task<List<PresensiMengajar>> Get() => await _presensiMengajarService.GetAsync();
 
     /// <summary>
-    /// Get a specific BookStore Item.
+    /// Get a specific PresensiMengajar Item.
     /// </summary>
     /// <param name="id"></param>
-    /// <returns>Get a specific BookStore Item</returns>
+    /// <returns>Get a specific PresensiMengajar Item</returns>
     /// <remarks>
     /// Sample request:
     ///
-    ///     GET /BookStore
+    ///     GET /PresensiMengajar
     ///     {
     ///         "Id": "IDIDIDI"
     ///     }
@@ -61,32 +61,32 @@ public class BooksController : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<Book>> Get(string id)
+    public async Task<ActionResult<PresensiMengajar>> Get(string id)
     {
-        var book = await _booksService.GetAsync(id);
+        var presensiMengajar = await _presensiMengajarService.GetAsync(id);
 
-        if (book is null)
+        if (presensiMengajar is null)
         {
             return NotFound();
         }
 
-        return book;
+        return presensiMengajar;
     }
 
     /// <summary>
-    /// Creates a BookStore Item.
+    /// Creates a PresensiMengajar Item.
     /// </summary>
-    /// <param name="newBook"></param>
-    /// <returns>A newly created BookStore Item</returns>
+    /// <param name="newPresensiMengajar"></param>
+    /// <returns>A newly created PresensiMengajar Item</returns>
     /// <remarks>
     /// Sample request:
     ///
-    ///     POST /BookStore
+    ///     POST /PresensiMengajar
     ///     {
-    ///         "Name": "BookName",
-    ///         "Price": 1.0,
-    ///         "Category": "BookCategory",
-    ///         "Author": "John Doe"
+    ///         "NIP": "112233",
+    ///         "tgl": "1-1-1970",
+    ///         "Kehadiran": false,
+    ///         "Kelas": "C.3.2",
     ///     }
     ///
     /// </remarks>
@@ -102,28 +102,28 @@ public class BooksController : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> Post(Book newBook)
+    public async Task<IActionResult> Post(PresensiMengajar newPresensiMengajar)
     {
-        await _booksService.CreateAsync(newBook);
+        await _presensiMengajarService.CreateAsync(newPresensiMengajar);
 
-        return CreatedAtAction(nameof(Get), new { id = newBook.Id }, newBook);
+        return CreatedAtAction(nameof(Get), new { id = newPresensiMengajar.Id }, newPresensiMengajar);
     }
 
     /// <summary>
-    /// Update an existing BookStore Item.
+    /// Update an existing PresensiMengajar Item.
     /// </summary>
-    /// <param name="updatedBook"></param>
-    /// <returns>An updated BookStore Item</returns>
+    /// <param name="updatedPresensiMengajar"></param>
+    /// <returns>An updated PresensiMengajar Item</returns>
     /// <remarks>
     /// Sample request:
     ///
-    ///     PUT /BookStore
+    ///     PUT /PresensiMengajar
     ///     {
     ///         "Id": "ididid",
-    ///         "Name": "BookName",
-    ///         "Price": 1.0,
-    ///         "Category": "BookCategory",
-    ///         "Author": "John Doe"
+    ///         "NIP": "112233",
+    ///         "tgl": "1-1-1970",
+    ///         "Kehadiran": false,
+    ///         "Kelas": "C.3.2",
     ///     }
     ///
     /// </remarks>
@@ -139,32 +139,32 @@ public class BooksController : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> Update(string id, Book updatedBook)
+    public async Task<IActionResult> Update(string id, PresensiMengajar updatedPresensiMengajar)
     {
-        var book = await _booksService.GetAsync(id);
+        var presensiMengajar = await _presensiMengajarService.GetAsync(id);
 
-        if (book is null)
+        if (presensiMengajar is null)
         {
             return NotFound();
         }
 
-        updatedBook.Id = book.Id;
+        updatedPresensiMengajar.Id = presensiMengajar.Id;
 
-        await _booksService.UpdateAsync(id, updatedBook);
+        await _presensiMengajarService.UpdateAsync(id, updatedPresensiMengajar);
 
         return NoContent();
     }
 
     /// <summary>
-    /// Deletes a specific BookStore Item.
+    /// Deletes a specific PresensiMengajar Item.
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    /// <returns>A deleted BookStore Item</returns>
+    /// <returns>A deleted PresensiMengajar Item</returns>
     /// <remarks>
     /// Sample request:
     ///
-    ///     DELETE /BookStore
+    ///     DELETE /PresensiMengajar
     ///     {
     ///         "Id": "ididid"
     ///     }
@@ -184,41 +184,16 @@ public class BooksController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> Delete(string id)
     {
-        var book = await _booksService.GetAsync(id);
+        var presensiMengajar = await _presensiMengajarService.GetAsync(id);
 
-        if (book is null)
+        if (presensiMengajar is null)
         {
             return NotFound();
         }
 
-        await _booksService.RemoveAsync(id);
+        await _presensiMengajarService.RemoveAsync(id);
 
         return NoContent();
     }
 }
 
-public class HttpResponse
-{
-    public int StatusCode { get; set; }
-    public object Body { get; set; }
-    public string ContentType { get; set; }
-
-    public HttpResponse(int statusCode, object body, string contentType)
-    {
-        StatusCode = statusCode;
-        Body = body;
-        ContentType = contentType;
-    }
-
-    public async Task WriteAsync(HttpContext context)
-    {
-        context.Response.StatusCode = StatusCode;
-        context.Response.ContentType = ContentType;
-
-        if (Body != null)
-        {
-            var json = JsonConvert.SerializeObject(Body);
-            await context.Response.WriteAsync(json);
-        }
-    }
-}

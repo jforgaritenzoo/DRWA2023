@@ -107,5 +107,506 @@
              <response code="404">If the item could not be found</response>
              <response code="500">If the request on the server failed unexpectedly</response>
         </member>
+        <member name="M:BookStoreApi.Controllers.GuruController.Get">
+            <summary>
+            Get all Guru Item.
+            </summary>
+            <returns>All Guru Item</returns>
+            <response code="200">Returns all the item</response>
+            <response code="400">If there is no item</response>
+            <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+            <response code="404">If the item could not be found</response>
+            <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.GuruController.Get(System.String)">
+             <summary>
+             Get a specific Guru Item.
+             </summary>
+             <param name="id"></param>
+             <returns>Get a specific Guru Item</returns>
+             <remarks>
+             Sample request:
+            
+                 GET /Guru
+                 {
+                     "Id": "112233"
+                 }
+            
+             </remarks>
+             <response code="200">Returns a specific item</response>
+             <response code="400">If the specific item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.GuruController.Post(BookStoreApi.Models.Guru)">
+             <summary>
+             Creates a Guru Item.
+             </summary>
+             <param name="newGuru"></param>
+             <returns>A newly created Guru Item</returns>
+             <remarks>
+             Sample request:
+            
+                 POST /Guru
+                 {
+                     "Name": "John Doe",
+                     "Kelas": "D.1.10",
+                     "NIP": "112233"
+                 }
+            
+             </remarks>
+             <response code="201">Returns the newly created item</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.GuruController.Update(System.String,BookStoreApi.Models.Guru)">
+             <summary>
+             Update an existing Guru Item.
+             </summary>
+             <param name="updatedGuru"></param>
+             <returns>An updated Guru Item</returns>
+             <remarks>
+             Sample request:
+            
+                 PUT /Guru
+                 {
+                     "Id": "ididid",
+                     "Name": "John Doe",
+                     "Kelas": "D.1.10",
+                     "NIP": "112233"
+                 }
+            
+             </remarks>
+             <response code="204">Returns the updated item</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.GuruController.Delete(System.String)">
+             <summary>
+             Deletes a specific Guru Item.
+             </summary>
+             <param name="id"></param>
+             <returns></returns>
+             <returns>A deleted Guru Item</returns>
+             <remarks>
+             Sample request:
+            
+                 DELETE /Guru
+                 {
+                     "Id": "ididid"
+                 }
+            
+             </remarks>
+             <response code="204">Item successfully deleted</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.KelasController.Get">
+            <summary>
+            Get all Kelas Item.
+            </summary>
+            <returns>All Kelas Item</returns>
+            <response code="200">Returns all the item</response>
+            <response code="400">If there is no item</response>
+            <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+            <response code="404">If the item could not be found</response>
+            <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.KelasController.Get(System.String)">
+             <summary>
+             Get a specific Kelas Item.
+             </summary>
+             <param name="id"></param>
+             <returns>Get a specific Kelas Item</returns>
+             <remarks>
+             Sample request:
+            
+                 GET /Kelas
+                 {
+                     "Id": "IDIDIDI"
+                 }
+            
+             </remarks>
+             <response code="200">Returns a specific item</response>
+             <response code="400">If the specific item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.KelasController.Post(BookStoreApi.Models.Kelas)">
+             <summary>
+             Creates a Kelas Item.
+             </summary>
+             <param name="newKelas"></param>
+             <returns>A newly created Kelas Item</returns>
+             <remarks>
+             Sample request:
+            
+                 POST /Kelas
+                 {
+                     "Name": "C.3.2",
+                 }
+            
+             </remarks>
+             <response code="201">Returns the newly created item</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.KelasController.Update(System.String,BookStoreApi.Models.Kelas)">
+             <summary>
+             Update an existing Kelas Item.
+             </summary>
+             <param name="updatedKelas"></param>
+             <returns>An updated Kelas Item</returns>
+             <remarks>
+             Sample request:
+            
+                 PUT /Kelas
+                 {
+                     "Id": "ididid",
+                     "Name": "C.3.2",
+                 }
+            
+             </remarks>
+             <response code="204">Returns the updated item</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.KelasController.Delete(System.String)">
+             <summary>
+             Deletes a specific Kelas Item.
+             </summary>
+             <param name="id"></param>
+             <returns></returns>
+             <returns>A deleted Kelas Item</returns>
+             <remarks>
+             Sample request:
+            
+                 DELETE /Kelas
+                 {
+                     "Id": "ididid"
+                 }
+            
+             </remarks>
+             <response code="204">Item successfully deleted</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.MapelController.Get">
+            <summary>
+            Get all Mapel Item.
+            </summary>
+            <returns>All Mapel Item</returns>
+            <response code="200">Returns all the item</response>
+            <response code="400">If there is no item</response>
+            <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+            <response code="404">If the item could not be found</response>
+            <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.MapelController.Get(System.String)">
+             <summary>
+             Get a specific Mapel Item.
+             </summary>
+             <param name="id"></param>
+             <returns>Get a specific Mapel Item</returns>
+             <remarks>
+             Sample request:
+            
+                 GET /Mapel
+                 {
+                     "Id": "IDIDIDI"
+                 }
+            
+             </remarks>
+             <response code="200">Returns a specific item</response>
+             <response code="400">If the specific item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.MapelController.Post(BookStoreApi.Models.Mapel)">
+             <summary>
+             Creates a Mapel Item.
+             </summary>
+             <param name="newMapel"></param>
+             <returns>A newly created Mapel Item</returns>
+             <remarks>
+             Sample request:
+            
+                 POST /Mapel
+                 {
+                     "Name": "Data Warehouse",
+                     "Kelas": "C.3.2"
+                 }
+            
+             </remarks>
+             <response code="201">Returns the newly created item</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.MapelController.Update(System.String,BookStoreApi.Models.Mapel)">
+             <summary>
+             Update an existing Mapel Item.
+             </summary>
+             <param name="updatedMapel"></param>
+             <returns>An updated Mapel Item</returns>
+             <remarks>
+             Sample request:
+            
+                 PUT /Mapel
+                 {
+                     "Id": "ididid",
+                     "Name": "Data Warehouse",
+                     "Kelas": "C.3.2"
+                 }
+            
+             </remarks>
+             <response code="204">Returns the updated item</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.MapelController.Delete(System.String)">
+             <summary>
+             Deletes a specific Mapel Item.
+             </summary>
+             <param name="id"></param>
+             <returns></returns>
+             <returns>A deleted Mapel Item</returns>
+             <remarks>
+             Sample request:
+            
+                 DELETE /Mapel
+                 {
+                     "Id": "ididid"
+                 }
+            
+             </remarks>
+             <response code="204">Item successfully deleted</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.PresensiHarianGuruController.Get">
+            <summary>
+            Get all PresensiHarianGuru Item.
+            </summary>
+            <returns>All PresensiHarianGuru Item</returns>
+            <response code="200">Returns all the item</response>
+            <response code="400">If there is no item</response>
+            <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+            <response code="404">If the item could not be found</response>
+            <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.PresensiHarianGuruController.Get(System.String)">
+             <summary>
+             Get a specific PresensiHarianGuru Item.
+             </summary>
+             <param name="id"></param>
+             <returns>Get a specific PresensiHarianGuru Item</returns>
+             <remarks>
+             Sample request:
+            
+                 GET /PresensiHarianGuru
+                 {
+                     "Id": "IDIDIDI"
+                 }
+            
+             </remarks>
+             <response code="200">Returns a specific item</response>
+             <response code="400">If the specific item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.PresensiHarianGuruController.Post(BookStoreApi.Models.PresensiHarianGuru)">
+             <summary>
+             Creates a PresensiHarianGuru Item.
+             </summary>
+             <param name="newPresensiHarianGuru"></param>
+             <returns>A newly created PresensiHarianGuru Item</returns>
+             <remarks>
+             Sample request:
+            
+                 POST /PresensiHarianGuru
+                 {
+                     "NIP": "112233",
+                     "tgl": "1-1-1970",
+                     "Kehadiran": false
+                 }
+            
+             </remarks>
+             <response code="201">Returns the newly created item</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.PresensiHarianGuruController.Update(System.String,BookStoreApi.Models.PresensiHarianGuru)">
+             <summary>
+             Update an existing PresensiHarianGuru Item.
+             </summary>
+             <param name="updatedPresensiHarianGuru"></param>
+             <returns>An updated PresensiHarianGuru Item</returns>
+             <remarks>
+             Sample request:
+            
+                 PUT /PresensiHarianGuru
+                 {
+                     "Id": "ididid",
+                     "NIP": "112233",
+                     "tgl": "1-1-1970",
+                     "Kehadiran": false
+                 }
+            
+             </remarks>
+             <response code="204">Returns the updated item</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.PresensiHarianGuruController.Delete(System.String)">
+             <summary>
+             Deletes a specific PresensiHarianGuru Item.
+             </summary>
+             <param name="id"></param>
+             <returns></returns>
+             <returns>A deleted PresensiHarianGuru Item</returns>
+             <remarks>
+             Sample request:
+            
+                 DELETE /PresensiHarianGuru
+                 {
+                     "Id": "ididid"
+                 }
+            
+             </remarks>
+             <response code="204">Item successfully deleted</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.PresensiMengajarController.Get">
+            <summary>
+            Get all PresensiMengajar Item.
+            </summary>
+            <returns>All PresensiMengajar Item</returns>
+            <response code="200">Returns all the item</response>
+            <response code="400">If there is no item</response>
+            <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+            <response code="404">If the item could not be found</response>
+            <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.PresensiMengajarController.Get(System.String)">
+             <summary>
+             Get a specific PresensiMengajar Item.
+             </summary>
+             <param name="id"></param>
+             <returns>Get a specific PresensiMengajar Item</returns>
+             <remarks>
+             Sample request:
+            
+                 GET /PresensiMengajar
+                 {
+                     "Id": "IDIDIDI"
+                 }
+            
+             </remarks>
+             <response code="200">Returns a specific item</response>
+             <response code="400">If the specific item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.PresensiMengajarController.Post(BookStoreApi.Models.PresensiMengajar)">
+             <summary>
+             Creates a PresensiMengajar Item.
+             </summary>
+             <param name="newPresensiMengajar"></param>
+             <returns>A newly created PresensiMengajar Item</returns>
+             <remarks>
+             Sample request:
+            
+                 POST /PresensiMengajar
+                 {
+                     "NIP": "112233",
+                     "tgl": "1-1-1970",
+                     "Kehadiran": false,
+                     "Kelas": "C.3.2",
+                 }
+            
+             </remarks>
+             <response code="201">Returns the newly created item</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.PresensiMengajarController.Update(System.String,BookStoreApi.Models.PresensiMengajar)">
+             <summary>
+             Update an existing PresensiMengajar Item.
+             </summary>
+             <param name="updatedPresensiMengajar"></param>
+             <returns>An updated PresensiMengajar Item</returns>
+             <remarks>
+             Sample request:
+            
+                 PUT /PresensiMengajar
+                 {
+                     "Id": "ididid",
+                     "NIP": "112233",
+                     "tgl": "1-1-1970",
+                     "Kehadiran": false,
+                     "Kelas": "C.3.2",
+                 }
+            
+             </remarks>
+             <response code="204">Returns the updated item</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
+        <member name="M:BookStoreApi.Controllers.PresensiMengajarController.Delete(System.String)">
+             <summary>
+             Deletes a specific PresensiMengajar Item.
+             </summary>
+             <param name="id"></param>
+             <returns></returns>
+             <returns>A deleted PresensiMengajar Item</returns>
+             <remarks>
+             Sample request:
+            
+                 DELETE /PresensiMengajar
+                 {
+                     "Id": "ididid"
+                 }
+            
+             </remarks>
+             <response code="204">Item successfully deleted</response>
+             <response code="400">If the item is null</response>
+             <response code="401">Client request has not been completed because it lacks valid authentication credentials for the requested resource</response>
+             <response code="404">If the item could not be found</response>
+             <response code="500">If the request on the server failed unexpectedly</response>
+        </member>
     </members>
 </doc>

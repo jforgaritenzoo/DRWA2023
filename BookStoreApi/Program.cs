@@ -6,7 +6,21 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Add CORS services to the container
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5124","http://localhost:5124/");
+        }
+    );
+});
 
 // Add services to the container.
 builder.Services.Configure<BookStoreDatabaseSettings>(
@@ -14,6 +28,11 @@ builder.Services.Configure<BookStoreDatabaseSettings>(
 );
 
 builder.Services.AddSingleton<BooksService>();
+builder.Services.AddSingleton<GuruService>();
+builder.Services.AddSingleton<KelasService>();
+builder.Services.AddSingleton<MapelService>();
+builder.Services.AddSingleton<PresensiHarianGuruService>();
+builder.Services.AddSingleton<PresensiMengajarService>();
 
 builder.Services
     .AddControllers()
@@ -87,6 +106,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthentication();
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YIhyDuDNdpydXt8aevAV5hW5D5Cwdw/5z/c10x4t+Xd4uv0VyotzCcfyjSLgRKcC6qL8m44VynobZy0FHHBAig==",
+  "dgSpecHash": "oW0rW6rozCerbQL53MbjHX8POrCX5rI5Vgzv3/cfJhciiPKVOzGR+WB4+hOlX+4uGsu5xeSE5FMCpgp3D/cucw==",
   "success": true,
-  "projectFilePath": "D:\\Materi Kuliah\\Semester 6\\DESAIN RESTFUL WEB API\\Project\\DRWA2023\\BookStoreApi\\BookStoreApi.csproj",
+  "projectFilePath": "D:\\Materi Kuliah\\Semester 6\\DESAIN RESTFUL WEB API\\Project\\DRWA2023\\bookstoreapi\\BookStoreApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
